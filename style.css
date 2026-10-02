@@ -1718,3 +1718,35 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-03 .лента { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: .5rem; }
     #экран-03 .лента .заглушка-картинки { flex: 0 0 42%; scroll-snap-align: start; }
   }
+
+/* экран 04 */
+#экран-04 .разворот { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(32px, 6vw, 88px); align-items: center; }
+  #экран-04 .шапка-слева { max-width: 36rem; }
+  #экран-04 .шапка-слева .кикер { display: table; margin-inline: auto; }
+  #экран-04 .шапка-слева h2 { margin: 0; }
+  #экран-04 .шапка-слева .лид { margin: 1rem 0 0; }
+  #экран-04 .точки { list-style: none; margin: clamp(28px, 3.5vw, 44px) 0 0; padding: 0; counter-reset: точка; }
+  #экран-04 .точки li { counter-increment: точка; display: grid; grid-template-columns: 3.25rem 1fr; gap: .25rem 1rem;
+      padding: 1.125rem 0; border-top: var(--нить) solid; align-items: baseline; }
+  #экран-04 .точки li:last-child { border-bottom: var(--нить) solid; }
+  #экран-04 .точки li::before { content: counter(точка, decimal-leading-zero); grid-row: 1 / span 2; font-size: var(--кегль-цифра);
+      line-height: 1; font-weight: 700; }
+  #экран-04 .точки b { display: block; font-size: var(--кегль-лид); line-height: 1.25; font-weight: 700; }
+  #экран-04 .точки span { display: block; font-size: var(--кегль-текст); line-height: 1.45; }
+  #экран-04 .кадр { margin: 0; position: relative; }
+  #экран-04 .кадр .заглушка-картинки { min-height: clamp(360px, 46vw, 600px); border-radius: var(--радиус-малый); }
+  #экран-04 .кадр figcaption { margin-top: .75rem; font-size: var(--кегль-мелкий); line-height: 1.4; }
+
+  #экран-04.светлый .точки li { border-color: var(--цвет-линия); }
+  #экран-04.тёмный .точки li { border-color: color-mix(in srgb, var(--цвет-тёмный-текст) 18%, transparent); }
+  #экран-04.светлый .точки li::before { color: var(--цвет-тёплый); }
+  #экран-04.тёмный .точки li::before { color: var(--цвет-тёплый-мягкий); }
+  #экран-04.светлый .точки span, #экран-04.светлый .кадр figcaption { color: var(--цвет-текст-мягкий); }
+  #экран-04.тёмный .точки span, #экран-04.тёмный .кадр figcaption { color: color-mix(in srgb, var(--цвет-тёмный-текст) 72%, transparent); }
+
+  @media (max-width: 899px) {
+    #экран-04 .разворот { grid-template-columns: 1fr; gap: 28px; }
+    #экран-04 .кадр { order: 2; }
+    #экран-04 .кадр .заглушка-картинки { min-height: 0; aspect-ratio: 4 / 5; }
+    #экран-04 .точки li { grid-template-columns: 2.75rem 1fr; gap: .25rem .75rem; }
+  }
