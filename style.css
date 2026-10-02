@@ -1735,7 +1735,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-04 .точки span { display: block; font-size: var(--кегль-текст); line-height: 1.45; }
   #экран-04 .кадр { margin: 0; position: relative; }
   #экран-04 .кадр .заглушка-картинки { min-height: clamp(360px, 46vw, 600px); border-radius: var(--радиус-малый); }
-  #экран-04 .кадр figcaption { margin-top: .75rem; font-size: var(--кегль-мелкий); line-height: 1.4; }
+  #экран-04 .кадр figcaption { margin-top: .75rem; font-size: var(--кегль-мелкий); line-height: 1.4; text-align: center; }
 
   #экран-04.светлый .точки li { border-color: var(--цвет-линия); }
   #экран-04.тёмный .точки li { border-color: color-mix(in srgb, var(--цвет-тёмный-текст) 18%, transparent); }
