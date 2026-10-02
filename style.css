@@ -1750,3 +1750,32 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-04 .кадр .заглушка-картинки { min-height: 0; aspect-ratio: 4 / 5; }
     #экран-04 .точки li { grid-template-columns: 2.75rem 1fr; gap: .25rem .75rem; }
   }
+
+/* экран 05 */
+#экран-05 .плиты { list-style: none; margin: clamp(32px, 4vw, 52px) 0 0; padding: 0; display: grid;
+      grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 1.8vw, 24px); counter-reset: шаг; }
+  #экран-05 .плиты li { counter-increment: шаг; position: relative; padding: clamp(22px, 2.4vw, 32px); border-radius: var(--радиус-карточки);
+      border: var(--нить) solid; border-top-width: 6px; display: flex; flex-direction: column; gap: .5rem; }
+  #экран-05 .плиты li::before { content: counter(шаг, decimal-leading-zero); font-size: var(--кегль-цифра); line-height: 1; font-weight: 700; }
+  #экран-05 .плиты b { display: block; font-size: var(--кегль-лид); line-height: 1.25; font-weight: 700; }
+  #экран-05 .плиты span { display: block; font-size: var(--кегль-текст); line-height: 1.45; }
+  #экран-05 .кадр { margin: clamp(24px, 3vw, 40px) 0 0; }
+  #экран-05 .кадр .заглушка-картинки { min-height: 0; aspect-ratio: 3 / 1; border-radius: var(--радиус-малый); }
+  #экран-05 .кадр figcaption { margin-top: .75rem; font-size: var(--кегль-мелкий); line-height: 1.4; text-align: center; }
+
+  #экран-05.светлый .плиты li { background: var(--цвет-фон-карточки); border-color: var(--цвет-линия); border-top-color: var(--цвет-тёплый); }
+  #экран-05.тёмный .плиты li { background: var(--цвет-тёмный-фон-2); border-color: color-mix(in srgb, var(--цвет-тёмный-текст) 14%, transparent); border-top-color: var(--цвет-тёплый-мягкий); }
+  #экран-05.светлый .плиты li::before { color: var(--цвет-тёплый); }
+  #экран-05.тёмный .плиты li::before { color: var(--цвет-тёплый-мягкий); }
+  #экран-05.светлый .плиты span, #экран-05.светлый .кадр figcaption { color: var(--цвет-текст-мягкий); }
+  #экран-05.тёмный .плиты span, #экран-05.тёмный .кадр figcaption { color: color-mix(in srgb, var(--цвет-тёмный-текст) 72%, transparent); }
+
+  #экран-05 .плиты li { text-align: center; align-items: center; }
+
+  @media (max-width: 899px) {
+    #экран-05 .плиты { grid-template-columns: 1fr 1fr; }
+    #экран-05 .кадр .заглушка-картинки { aspect-ratio: 4 / 3; }
+  }
+  @media (max-width: 599px) {
+    #экран-05 .плиты { grid-template-columns: 1fr; }
+  }
