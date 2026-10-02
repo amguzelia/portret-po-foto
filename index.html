@@ -246,6 +246,14 @@
 </head>
 <body class="с-липкой-кнопкой">
 <section class="блок блок--первый-экран первый-экран--разворот светлый фон--зерно сторона--слева" id="экран-1" data-тип="первый-экран" data-схема="разворот" data-ключ-макета="светлая" data-картинка="фото">
+<style>
+  #экран-1 .первый-экран__доверие { font-size: var(--кегль-мелкий); line-height: 1.4; align-items: flex-start; } /* все награды мелко — по просьбе владелицы */
+  #экран-1 .шапка__лого, #экран-1 .знак-над-текстом { display: inline-flex; align-items: center; gap: .75em; font-size: var(--кегль-мелкий); text-transform: uppercase; letter-spacing: .14em; font-weight: 800; color: color-mix(in srgb, var(--цвет-тёплый) 65%, var(--цвет-акцент)); } /* знак в стиле подписей разделов — по просьбе владелицы */
+  #экран-1 .шапка__лого::before, #экран-1 .шапка__лого::after, #экран-1 .знак-над-текстом::before, #экран-1 .знак-над-текстом::after { content: ""; display: block; flex: none; width: 2.5em; height: 2px; background: currentColor; }
+  @media (max-width: 599px) { #экран-1 .шапка__лого { white-space: nowrap; letter-spacing: .06em; gap: .5em; } #экран-1 .шапка__лого::before, #экран-1 .шапка__лого::after { width: 1.25em; } } /* на телефоне знак в одну строку */
+  #экран-1 .знак-над-текстом { display: none; }
+  @media (min-width: 900px) { #экран-1 .шапка { display: none; } #экран-1 .знак-над-текстом { display: flex; width: fit-content; align-self: center; margin: -40px auto 64px; } /* нижний отступ гасит подъём заголовка на 64px */ } /* на компьютере знак — по центру над текстом, по просьбе владелицы */
+</style>
   <header class="шапка">
     <a class="шапка__лого" href="#">Портреты Гюзелии Аистовой</a>
     <span class="шапка__лиц"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -255,6 +263,7 @@
   <span class="пятно пятно--1"></span><span class="пятно пятно--2"></span>
   <div class="блок__внутри">
     <div class="первый-экран__текст">
+      <p class="знак-над-текстом" aria-hidden="true">Портреты Гюзелии Аистовой</p>
       <h1>Цифровой портрет по фото<span class="делитель"> —</span> <span class="хвост">подарок, который хранят <em class="акцент">годами</em></span></h1>
       <p class="лид">Фото от вас, эскиз от меня, правки вместе. После вашего «да» решаем, в каком формате вы получите картину: файл или холст</p>
       <ul class="список-иконок">
@@ -263,11 +272,11 @@
         <li><i class="галка"></i><span>Готовность 2–3 дня, к дате — обсудим</span></li>
         <li><i class="галка"></i><span>От 1000 ₽ — цена зависит от количества персонажей</span></li>
       </ul>
-      <p class="первый-экран__доверие">🏆 7 призовых мест на выставках</p>
+      <p class="первый-экран__доверие">🏆 <span>7 призовых мест · 1&nbsp;место на «Таланте России», 2026 · 3&nbsp;международные выставки</span></p>
       <div class="первый-экран__действие"><a class="кнопка кнопка--главная" href="https://max.ru/u/f9LHodD0cOK2V7GORyJiWTEJaWReYrQ74yPLNE6TqSnU1nsbiuqmdJSMkWU">Написать в MAX</a></div>
     </div>
     <figure class="картинка картинка--фото картинка--край первый-экран__картинка" style="--лицо-в-кадре: .28">
-      <picture><source media="(max-width: 899px)" srcset="img/foto-avtora-s-planshetom-v-ramke-vyrez-telefon.webp"><img src="img/foto-avtora-s-planshetom-v-ramke-vyrez.png" alt="Нарисую портрет по вашим фото в подарок или для дома" data-лицо="50,22" fetchpriority="high"></picture>
+      <picture><source media="(max-width: 899px)" srcset="img/foto-avtora-s-planshetom-v-ramke-vyrez-telefon.webp"><img src="img/foto-avtora-s-planshetom-v-ramke-vyrez.webp" alt="Нарисую портрет по вашим фото в подарок или для дома" data-лицо="50,22" fetchpriority="high"></picture>
     </figure>
   </div>
 </section>
@@ -385,18 +394,19 @@
 </section>
 <section class="блок блок--о-себе блок--тихо тёмный" id="экран-07" data-тип="о-себе" data-вёрстка="своя">
 <div class="блок__внутри">
+  <p class="кикер кикер--вверху">Об авторе</p>
   <div class="знакомство">
     <figure class="портрет">
       <div class="заглушка-картинки">заглушка</div>
     </figure>
     <div class="рассказ">
+      <p class="кикер кикер--над-текстом" aria-hidden="true">Об авторе</p>
       <div class="секция__шапка секция__шапка--центр">
-        <p class="кикер">Об авторе</p>
         <h2>Гюзелия Аистова</h2>
         <p class="лид секция__лид">Guzelia Aistova · <span style="white-space:nowrap">художник-иллюстратор</span></p>
       </div>
       <p class="текст">Делюсь находками и создаю портреты по фото. Веду канал «Жизнь в&nbsp;ПроКреат», где делюсь своими работами и&nbsp;рабочим процессом.</p>
-      <p class="рада">Буду рада вашему заказу</p>
+      <p class="кикер рада">Буду рада вашему заказу</p>
       <p class="контакты">Контакты:</p>
       <div class="связь">
         <a class="кнопка кнопка--главная" href="https://max.ru/u/f9LHodD0cOK2V7GORyJiWTEJaWReYrQ74yPLNE6TqSnU1nsbiuqmdJSMkWU" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2.5 6.6 2.5 11c0 2.5 1.3 4.7 3.4 6.2L5 21l4.2-2.3c.9.2 1.8.3 2.8.3 5.5 0 9.5-3.6 9.5-8S17.5 3 12 3z"/></svg>MAX</a>
@@ -456,6 +466,30 @@
     <a class="кнопка кнопка--главная" href="https://max.ru/u/f9LHodD0cOK2V7GORyJiWTEJaWReYrQ74yPLNE6TqSnU1nsbiuqmdJSMkWU" target="_blank" rel="noopener">Написать мне…</a>
   </div>
 </div>
+</section>
+<section class="блок блок--подвал блок--тихо светлый" id="экран-10" data-тип="подвал" data-вёрстка="своя">
+  <div class="блок__внутри">
+    <div class="подвал">
+      <p class="подвал__знак">Портреты Гюзелии Аистовой</p>
+      <div class="подвал__группа">
+        <h4 class="подвал__заголовок">Разделы</h4>
+        <div class="подвал__ссылки подвал__разделы">
+          <a href="#экран-02">Для кого</a>
+          <a href="#экран-03">Было → стало</a>
+          <a href="#экран-04">Что важно в портрете</a>
+          <a href="#экран-05">Как проходит работа</a>
+          <a href="#экран-06">Цены</a>
+          <a href="#экран-07">Гюзелия Аистова</a>
+          <a href="#экран-08">Частые вопросы</a>
+          <a href="#экран-09">Портрет на заказ</a>
+        </div>
+      </div>
+      <div class="подвал__низ">
+        <span>Самозанятая · Гюзелия Аистова</span>
+        <span>© 2026</span>
+      </div>
+    </div>
+  </div>
 </section>
 <div class="липкая-кнопка"><a class="кнопка кнопка--главная" href="https://max.ru/u/f9LHodD0cOK2V7GORyJiWTEJaWReYrQ74yPLNE6TqSnU1nsbiuqmdJSMkWU">Написать в MAX</a></div>
 <script>
