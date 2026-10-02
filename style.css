@@ -1669,12 +1669,11 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 }
 
 /* экран 02 */
-#экран-02 .галки { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem clamp(32px, 5vw, 72px);
+#экран-02.блок { padding-top: calc(var(--отступ-секции) * .4); }
+  #экран-02 .галки { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem clamp(32px, 5vw, 72px);
       max-width: 60rem; margin: clamp(32px, 4vw, 52px) auto 0; padding: 0; }
   #экран-02 .галки li { display: grid; grid-template-columns: 2rem 1fr; gap: .875rem; font-size: var(--кегль-текст); line-height: 1.45; }
-  #экран-02 .галки li:first-child { grid-column: 1 / -1; font-size: var(--кегль-лид); padding-bottom: 1.5rem; border-bottom: 1px solid; }
-  #экран-02.светлый .галки li:first-child { border-color: var(--цвет-линия); }
-  #экран-02.тёмный .галки li:first-child { border-color: color-mix(in srgb, var(--цвет-тёмный-текст) 18%, transparent); }
+  #экран-02 .галки li:first-child { grid-column: 1 / -1; font-size: var(--кегль-лид); }
   #экран-02 .галки li::before { content: "✓"; display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%;
       font-weight: 700; font-size: var(--кегль-мелкий); }
   #экран-02 .галки p { margin: 0; }
@@ -1685,4 +1684,5 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-02.тёмный .галки span { color: color-mix(in srgb, var(--цвет-тёмный-текст) 72%, transparent); }
   @media (max-width: 899px) {
     #экран-02 .галки { grid-template-columns: 1fr; gap: 1.25rem; }
+    #экран-02 .галки li:first-child { font-size: var(--кегль-текст); }
   }
