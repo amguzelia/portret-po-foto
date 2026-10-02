@@ -1779,3 +1779,33 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   @media (max-width: 599px) {
     #экран-05 .плиты { grid-template-columns: 1fr; }
   }
+
+/* экран 06 */
+#экран-06 .прайс { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(14px, 1.8vw, 24px); margin-top: clamp(32px, 4vw, 52px); }
+  #экран-06 .строка { display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: .75rem;
+      text-align: center; padding: clamp(22px, 2.4vw, 32px); border-radius: var(--радиус-карточки); border: var(--нить) solid; }
+  #экран-06 .строка--главная { grid-column: span 2; padding: clamp(28px, 3.4vw, 48px); border-top-width: 6px; }
+  #экран-06 .строка__текст { display: flex; flex-direction: column; gap: .4rem; }
+  #экран-06 .строка b { display: block; font-size: var(--кегль-лид); line-height: 1.25; font-weight: 700; }
+  #экран-06 .строка span { display: block; font-size: var(--кегль-текст); line-height: 1.45; }
+  #экран-06 .строка em { display: block; font-style: normal; font-weight: 700; line-height: 1; font-size: var(--кегль-цифра); }
+  #экран-06 .строка--главная em { font-size: var(--кегль-цифра); }
+  #экран-06 .подвал { display: grid; justify-items: center; gap: 1.25rem; margin-top: clamp(32px, 4vw, 52px); text-align: center; }
+  #экран-06 .подвал p { margin: 0; max-width: 46rem; font-size: var(--кегль-мелкий); line-height: 1.5; }
+
+  #экран-06.светлый .строка { background: var(--цвет-фон-карточки); border-color: var(--цвет-линия); }
+  #экран-06.тёмный .строка { background: var(--цвет-тёмный-фон-2); border-color: color-mix(in srgb, var(--цвет-тёмный-текст) 14%, transparent); }
+  #экран-06.светлый .строка--главная { border-top-color: var(--цвет-тёплый); }
+  #экран-06.тёмный .строка--главная { border-top-color: var(--цвет-тёплый-мягкий); }
+  #экран-06.светлый .строка em { color: var(--цвет-тёплый); }
+  #экран-06.тёмный .строка em { color: var(--цвет-тёплый-мягкий); }
+  #экран-06.светлый .строка span, #экран-06.светлый .подвал p { color: var(--цвет-текст-мягкий); }
+  #экран-06.тёмный .строка span, #экран-06.тёмный .подвал p { color: color-mix(in srgb, var(--цвет-тёмный-текст) 72%, transparent); }
+
+  @media (max-width: 899px) {
+    #экран-06 .прайс { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 599px) {
+    #экран-06 .прайс { grid-template-columns: 1fr; }
+    #экран-06 .строка--главная { grid-column: auto; }
+  }
