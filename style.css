@@ -1844,6 +1844,8 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-07 .контакты { margin: .5rem 0 0; font-weight: 700; font-size: var(--кегль-лид); }
   #экран-07 .связь { display: grid; grid-template-columns: repeat(2, minmax(0, 11rem)); justify-content: center; gap: .75rem; width: 100%; }
   #экран-07 .связь .кнопка { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; width: 100%; padding-inline: .75rem; white-space: nowrap; }
+  #экран-07 .связь .кнопка--контур { background: var(--цвет-тёплый); color: var(--цвет-акцент); border: 2px solid var(--цвет-акцент); }
+  #экран-07 .связь .кнопка--контур:hover { background: var(--цвет-тёплый-мягкий); color: var(--цвет-акцент); }
   #экран-07 .связь svg { width: 1.25em; height: 1.25em; flex: none; fill: currentColor; }
 
   @media (max-width: 599px) { #экран-07 .рада { white-space: nowrap; letter-spacing: .06em; gap: .5em; } #экран-07 .рада::before, #экран-07 .рада::after { width: 1.25em; } }
