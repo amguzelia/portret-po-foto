@@ -1851,6 +1851,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   @media (min-width: 900px) { #экран-07 .кикер--вверху { display: none; } #экран-07 .кикер--над-текстом { display: flex; width: fit-content; } }
   #экран-07 .знакомство { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(28px, 5vw, 80px); align-items: center; }
   @media (min-width: 900px) { #экран-07 .портрет { order: 2; } }
+  @media (min-width: 900px) { #экран-07 .знакомство { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
   #экран-07 .портрет { position: relative; margin: 0; }
   #экран-07 .портрет img { display: block; width: 100%; height: auto; }
   #экран-07 .портрет .заглушка-картинки { min-height: 0; aspect-ratio: 4 / 5; border-radius: var(--радиус-карточки); }
