@@ -1706,7 +1706,8 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-03 .пара figcaption { grid-column: 1 / -1; padding: .75rem .25rem 0;
       font-size: var(--кегль-текст); line-height: 1.4; }
   #экран-03 .пара figcaption b { display: block; font-size: var(--кегль-лид); }
-  #экран-03 .пара__было { position: absolute; top: .875rem; left: .875rem; padding: .25em .75em; border-radius: 9em; font-size: var(--кегль-мелкий); }
+  #экран-03 .пара__было { grid-column: 1 / -1; text-align: center; padding: .6rem .25rem 0; text-transform: uppercase; letter-spacing: .1em; font-size: 13px; color: var(--цвет-тёплый); }
+  #экран-03 .пара__было + figcaption { padding-top: .25rem; }
   #экран-03 .ещё { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-top: clamp(48px, 6vw, 80px); }
   #экран-03 .ещё h3 { margin: 0; font-size: var(--кегль-лид); }
   #экран-03 .лента { display: flex; gap: 4px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; }
@@ -1730,8 +1731,6 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-03.светлый .пара figcaption { color: var(--цвет-текст); }
   #экран-03.тёмный .пара figcaption b { color: var(--цвет-тёплый-мягкий); }
   #экран-03.светлый .пара figcaption b { color: var(--цвет-акцент); }
-  #экран-03.тёмный .пара__было { background: color-mix(in srgb, var(--цвет-тёмный-фон) 70%, transparent); color: var(--цвет-тёмный-текст); }
-  #экран-03.светлый .пара__было { background: var(--цвет-фон); color: var(--цвет-текст); }
   #экран-03.тёмный .подвал p { color: color-mix(in srgb, var(--цвет-тёмный-текст) 70%, transparent); }
   #экран-03.светлый .подвал p { color: var(--цвет-текст-мягкий); }
   @media (max-width: 899px) {
@@ -1742,8 +1741,6 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-03 .лента { padding-bottom: .5rem; scrollbar-width: thin; }
     #экран-03 .лента::-webkit-scrollbar { display: block; height: 4px; }
     #экран-03 .лента__стрелка { display: none; }
-    #экран-03 .пара__было, #экран-03.тёмный .пара__было, #экран-03.светлый .пара__было { position: static; grid-column: 1 / -1; text-align: center; padding: .6rem .25rem 0; background: transparent; border-radius: 0; text-transform: uppercase; letter-spacing: .1em; font-size: 13px; color: var(--цвет-тёплый); }
-    #экран-03 .пара__было + figcaption { padding-top: .25rem; }
   }
   #экран-03 .кнопка { font-size: var(--кегль-мелкий); min-height: 0; padding: .7em 1.1em; }
 
