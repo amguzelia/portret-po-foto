@@ -1722,6 +1722,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-03 .плитка--стикер img { object-fit: contain; background: color-mix(in srgb, var(--цвет-тёплый) 18%, transparent); }
   #экран-03 .плитка__вид { position: absolute; left: 6px; bottom: 6px; padding: .2em .6em; border-radius: 999px; font-size: var(--кегль-мелкий); background: color-mix(in srgb, var(--цвет-тёмный-фон) 70%, transparent); color: var(--цвет-тёмный-текст); }
   #экран-03 .плитка__вид--сверху { top: 6px; bottom: auto; }
+  #экран-03 .лента .плитка--стикер img { object-fit: contain; object-position: 50% 30%; background: color-mix(in srgb, var(--цвет-тёмный-текст) 12%, var(--цвет-тёмный-фон)); }
   #экран-03 .лента img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 20%; border-radius: var(--радиус-малый); }
   #экран-03 .подвал { display: grid; justify-items: center; gap: 1rem; margin-top: clamp(40px, 5vw, 64px); text-align: center; }
   #экран-03 .подвал p { margin: 0; font-size: var(--кегль-мелкий); }
@@ -1741,6 +1742,8 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-03 .лента { padding-bottom: .5rem; scrollbar-width: thin; }
     #экран-03 .лента::-webkit-scrollbar { display: block; height: 4px; }
     #экран-03 .лента__стрелка { display: none; }
+    #экран-03 .пара__было, #экран-03.тёмный .пара__было, #экран-03.светлый .пара__было { position: static; grid-column: 1 / -1; text-align: center; padding: .6rem .25rem 0; background: transparent; border-radius: 0; text-transform: uppercase; letter-spacing: .1em; font-size: 13px; color: var(--цвет-тёплый); }
+    #экран-03 .пара__было + figcaption { padding-top: .25rem; }
   }
   #экран-03 .кнопка { font-size: var(--кегль-мелкий); min-height: 0; padding: .7em 1.1em; }
 
