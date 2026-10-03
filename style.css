@@ -1930,6 +1930,10 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-09 .финал .кнопка { margin-top: 3rem; }
   }
   #экран-09 .кнопка { font-size: var(--кегль-мелкий); min-height: 0; padding: .7em 1.1em; }
+  #экран-09 .запасная-связь { margin: -.5rem 0 0; font-size: var(--кегль-мелкий); }
+  #экран-09.тёмный .запасная-связь { color: color-mix(in srgb, var(--цвет-тёмный-текст) 78%, transparent); }
+  #экран-09.светлый .запасная-связь { color: var(--цвет-текст-мягкий); }
+  #экран-09 .запасная-связь a { color: inherit; text-decoration: underline; text-underline-offset: .2em; }
 
 /* экран 10 */
 #экран-10 { padding-block: 2rem; }
