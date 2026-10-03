@@ -1721,7 +1721,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-03 .лента > .плитка { flex: 0 0 17.5%; scroll-snap-align: start; }
   #экран-03 .плитка { position: relative; margin: 0; }
   #экран-03 .плитка--стикер img { object-fit: contain; background: color-mix(in srgb, var(--цвет-тёплый) 18%, transparent); }
-  #экран-03 .плитка__вид { position: absolute; left: 6px; bottom: 6px; padding: .2em .6em; border-radius: 999px; font-size: var(--кегль-мелкий); background: color-mix(in srgb, var(--цвет-тёмный-фон) 70%, transparent); color: var(--цвет-тёмный-текст); }
+  #экран-03 .плитка__вид { position: absolute; left: 6px; bottom: 6px; padding: .2em .6em; border-radius: 999px; font-size: var(--кегль-мелкий); background: color-mix(in srgb, var(--цвет-тёмный-фон) 35%, transparent); color: var(--цвет-тёмный-текст); text-shadow: 0 1px 2px var(--цвет-тёмный-фон); }
   #экран-03 .плитка__вид--сверху { top: 6px; bottom: auto; }
   #экран-03 .лента .плитка--стикер img { object-fit: contain; object-position: 50% 30%; background: color-mix(in srgb, var(--цвет-тёмный-текст) 12%, var(--цвет-тёмный-фон)); }
   #экран-03 .лента img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 20%; border-radius: var(--радиус-малый); }
@@ -1762,14 +1762,14 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-04 .точки span { display: block; font-size: var(--кегль-текст); line-height: 1.45; }
   #экран-04 .кадр { margin: 0; position: relative; }
   #экран-04 .кадр img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--радиус-малый); }
-  #экран-04 .кадр figcaption { margin-top: .75rem; font-size: var(--кегль-мелкий); line-height: 1.4; text-align: center; }
+  #экран-04 .кадр figcaption { margin-top: .75rem; font-size: var(--кегль-мелкий); line-height: 1.4; text-align: center; color: var(--цвет-тёплый); }
 
   #экран-04.светлый .точки li { border-color: var(--цвет-линия); }
   #экран-04.тёмный .точки li { border-color: color-mix(in srgb, var(--цвет-тёмный-текст) 18%, transparent); }
   #экран-04.светлый .точки li::before { color: var(--цвет-тёплый); }
   #экран-04.тёмный .точки li::before { color: var(--цвет-тёплый-мягкий); }
-  #экран-04.светлый .точки span, #экран-04.светлый .кадр figcaption { color: var(--цвет-текст-мягкий); }
-  #экран-04.тёмный .точки span, #экран-04.тёмный .кадр figcaption { color: color-mix(in srgb, var(--цвет-тёмный-текст) 72%, transparent); }
+  #экран-04.светлый .точки span { color: var(--цвет-текст-мягкий); }
+  #экран-04.тёмный .точки span { color: color-mix(in srgb, var(--цвет-тёмный-текст) 72%, transparent); }
 
   @media (max-width: 899px) {
     #экран-04 .разворот { grid-template-columns: 1fr; gap: 28px; }
