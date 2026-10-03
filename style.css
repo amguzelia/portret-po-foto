@@ -1762,7 +1762,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-04 .точки span { display: block; font-size: var(--кегль-текст); line-height: 1.45; }
   #экран-04 .кадр { margin: 0; position: relative; }
   #экран-04 .кадр img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--радиус-малый); }
-  #экран-04 .кадр figcaption { margin-top: .75rem; font-size: var(--кегль-мелкий); line-height: 1.4; text-align: center; color: var(--цвет-тёплый); }
+  #экран-04 .кадр figcaption { margin-top: .75rem; font-size: var(--кегль-мелкий); line-height: 1.4; text-align: center; color: color-mix(in srgb, var(--цвет-тёплый-тёмный) 80%, var(--цвет-текст)); }
 
   #экран-04.светлый .точки li { border-color: var(--цвет-линия); }
   #экран-04.тёмный .точки li { border-color: color-mix(in srgb, var(--цвет-тёмный-текст) 18%, transparent); }

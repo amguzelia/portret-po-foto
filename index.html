@@ -8,6 +8,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta property="og:title" content="Портрет по фото">
 <meta property="og:description" content="Цифровой портрет по фото — подарок, который хранят годами">
+<meta property="og:image" content="https://amguzelia.github.io/portret-po-foto/img/card.jpg">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,6 +82,7 @@
   .блок--первый-экран.блок--первый-экран .список-иконок .галка { display: inline-block; vertical-align: -.2em; margin-right: .45em; }
   .блок--первый-экран.блок--первый-экран .шапка { justify-content: center; }
 }
+.блок--первый-экран.блок--первый-экран .шапка { border-bottom: 0; }   /* по просьбе: линия под надписью убрана — на телефоне в неё упиралась макушка (03.10.2026, мелочь 5) */
 /* по просьбе: на телефоне заголовок одного размера, подзаголовок мельче и на 0,5 см ближе к заголовку */
 @media (max-width: 599px) {
   .блок--первый-экран.блок--первый-экран h1 .хвост { display: inline; margin-top: 0; font-size: 1em; font-weight: inherit; line-height: inherit; }
@@ -213,6 +215,27 @@
 #экран-1::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: var(--переход); z-index: 0; pointer-events: none; background: linear-gradient(rgb(237 230 218 / 0.000) calc(var(--переход) * 0), rgb(237 230 218 / 0.001) calc(var(--переход) * 0.05), rgb(237 230 218 / 0.009) calc(var(--переход) * 0.1), rgb(237 230 218 / 0.027) calc(var(--переход) * 0.15), rgb(237 230 218 / 0.058) calc(var(--переход) * 0.2), rgb(237 230 218 / 0.104) calc(var(--переход) * 0.25), rgb(237 230 218 / 0.163) calc(var(--переход) * 0.3), rgb(237 230 218 / 0.235) calc(var(--переход) * 0.35), rgb(237 230 218 / 0.317) calc(var(--переход) * 0.4), rgb(237 230 218 / 0.407) calc(var(--переход) * 0.45), rgb(237 230 218 / 0.500) calc(var(--переход) * 0.5), rgb(237 230 218 / 0.593) calc(var(--переход) * 0.55), rgb(237 230 218 / 0.683) calc(var(--переход) * 0.6), rgb(237 230 218 / 0.765) calc(var(--переход) * 0.65), rgb(237 230 218 / 0.837) calc(var(--переход) * 0.7), rgb(237 230 218 / 0.896) calc(var(--переход) * 0.75), rgb(237 230 218 / 0.942) calc(var(--переход) * 0.8), rgb(237 230 218 / 0.973) calc(var(--переход) * 0.85), rgb(237 230 218 / 0.991) calc(var(--переход) * 0.9), rgb(237 230 218 / 0.999) calc(var(--переход) * 0.95), rgb(237 230 218 / 1.000) calc(var(--переход) * 1)); }
 /* без линии над подвалом — по просьбе владелицы (03.10.2026) */
 #экран-10.блок { border-top: 0; }
+/* по просьбе (03.10.2026, приёмка, пункт 6): на планшете и телефоне боком заголовок не касается линии под шапкой */
+@media (min-width: 600px) and (max-width: 899px) {
+  .блок--первый-экран.блок--первый-экран .первый-экран__текст > h1 { margin-top: 0; }   /* было -64px — это для компьютера */
+  .блок--первый-экран.блок--первый-экран .шапка { justify-content: center; }   /* по просьбе: надпись «Портреты Гюзелии Аистовой» по центру экрана, как на телефоне */
+}
+/* по просьбе (03.10.2026, приёмка, пункт 6): на компьютере надпись «Портреты Гюзелии Аистовой» — по центру всей страницы, а не над колонкой текста; прежний знак над текстом невидим, но держит место, чтобы текст не сдвинулся */
+@media (min-width: 900px) {
+  #экран-1.блок--первый-экран .шапка { display: flex; position: absolute; top: 18px; left: 0; right: 0; justify-content: center; border-bottom: 0; }
+  #экран-1.блок--первый-экран .знак-над-текстом { visibility: hidden; }
+}
+/* по просьбе (03.10.2026, приёмка, пункт 6): на планшете стоя — фото сверху, текст под ним, как на телефоне, без пустоты под фото */
+@media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
+  .первый-экран--разворот.первый-экран--разворот .блок__внутри { grid-template-columns: minmax(0, 1fr); gap: calc(var(--отступ-блока) * 1.5); }
+  .первый-экран--разворот.первый-экран--разворот .первый-экран__картинка { order: -1; margin: -150px auto 0; width: 72%; min-height: 0; aspect-ratio: 4 / 5; }
+  .первый-экран--разворот.первый-экран--разворот .первый-экран__текст { padding-inline: 32px; }
+  .блок--первый-экран.блок--первый-экран .первый-экран__текст > h1 { text-align: center; }
+  .первый-экран--разворот.первый-экран--разворот .первый-экран__действие { justify-self: center; }
+  .блок--первый-экран.блок--первый-экран .первый-экран__текст > .лид { text-align: center; justify-self: center; margin-inline: auto; }   /* по просьбе: абзац под заголовком тоже по центру */
+  .первый-экран--разворот.первый-экран--разворот .первый-экран__регалии,
+  .первый-экран--разворот.первый-экран--разворот .чип--ролик { display: none; }
+}
 :root, .светлый { --цвет-кнопки: #111111; --цвет-на-кнопке: #FAF8F4; --цвет-кнопки-навёл: var(--цвет-акцент-тёмный); }
 .тёмный { --цвет-кнопки: #C89A3C; --цвет-на-кнопке: #111111; --цвет-кнопки-навёл: #D1AA5C; }
 
@@ -291,7 +314,7 @@
       <div class="первый-экран__действие"><a class="кнопка кнопка--главная" href="https://max.ru/u/f9LHodD0cOK2V7GORyJiWTEJaWReYrQ74yPLNE6TqSnU1nsbiuqmdJSMkWU">Написать в MAX</a></div>
     </div>
     <figure class="картинка картинка--фото картинка--край первый-экран__картинка" style="--лицо-в-кадре: .28">
-      <picture><source media="(max-width: 899px)" srcset="img/foto-avtora-ekran1-lico4-telefon.webp"><img src="img/foto-avtora-ekran1-lico4.webp" alt="Нарисую портрет по вашим фото в подарок или для дома" data-лицо="54,33" fetchpriority="high"></picture>
+      <picture><source media="(max-width: 899px)" srcset="img/foto-avtora-ekran1-lico4-telefon.webp" width="900" height="1127"><img width="1005" height="1396" src="img/foto-avtora-ekran1-lico4.webp" alt="Нарисую портрет по вашим фото в подарок или для дома" data-лицо="54,33" fetchpriority="high"></picture>
     </figure>
   </div>
 </section>
@@ -318,20 +341,20 @@
     <p class="лид секция__лид">Все работы нарисованы мной в Procreate по фотографиям и референсам</p>
   </div>
   <div class="стена секция__тело">
-    <figure class="пара"><div class="пара__кадры"><img src="img/semya4-foto-roditeli.webp" alt="Исходное фото: родители" loading="lazy" decoding="async"><img src="img/semya4-foto-deti.webp" alt="Исходное фото: сын с девушкой" loading="lazy" decoding="async"></div>
-      <img src="img/semya4-portret.webp" alt="Семейный портрет четырёх человек" loading="lazy" decoding="async">
+    <figure class="пара"><div class="пара__кадры"><img width="660" height="880" src="img/semya4-foto-roditeli.webp" alt="Исходное фото: родители" loading="lazy" decoding="async"><img width="660" height="880" src="img/semya4-foto-deti.webp" alt="Исходное фото: сын с девушкой" loading="lazy" decoding="async"></div>
+      <img width="1000" height="1333" src="img/semya4-portret.webp" alt="Семейный портрет четырёх человек" loading="lazy" decoding="async">
       <span class="пара__было">фото → портрет</span>
       <figcaption><b>Семья из четырёх</b>Собрала всех из двух фотографий</figcaption></figure>
-    <figure class="пара"><div class="пара__кадры"><img src="img/buket-foto-zhena-2.webp" alt="Исходное фото: жена с букетом" loading="lazy" decoding="async"><img src="img/buket-foto-muzh-2.webp" alt="Исходное фото: муж в очках с планшетом" loading="lazy" decoding="async"></div>
-      <img src="img/buket-portret.webp" alt="Портрет пожилой пары с букетом роз" loading="lazy" decoding="async">
+    <figure class="пара"><div class="пара__кадры"><img width="605" height="807" src="img/buket-foto-zhena-2.webp" alt="Исходное фото: жена с букетом" loading="lazy" decoding="async"><img width="605" height="807" src="img/buket-foto-muzh-2.webp" alt="Исходное фото: муж в очках с планшетом" loading="lazy" decoding="async"></div>
+      <img width="1000" height="867" src="img/buket-portret.webp" alt="Портрет пожилой пары с букетом роз" loading="lazy" decoding="async">
       <span class="пара__было">фото → портрет</span>
       <figcaption><b>Пара с букетом</b>Два снимка стали одним портретом</figcaption></figure>
-    <figure class="пара"><div class="пара__кадры"><img src="img/dama-ishodnik.webp" alt="Референс: пожилая дама с жемчугом" loading="lazy" decoding="async"></div>
-      <img src="img/dama-portret.webp" alt="Портрет пожилой дамы с жемчугом" loading="lazy" decoding="async">
+    <figure class="пара"><div class="пара__кадры"><img width="660" height="860" src="img/dama-ishodnik.webp" alt="Референс: пожилая дама с жемчугом" loading="lazy" decoding="async"></div>
+      <img width="1000" height="1304" src="img/dama-portret.webp" alt="Портрет пожилой дамы с жемчугом" loading="lazy" decoding="async">
       <span class="пара__было">референс → портрет</span>
       <figcaption><b>Дама с жемчугом</b>Портрет по референсу</figcaption></figure>
-    <figure class="пара"><div class="пара__кадры"><img src="img/muzh-foto.webp" alt="Референс: мужчина с седой бородой" loading="lazy" decoding="async"></div>
-      <img src="img/muzh-portret.webp" alt="Портрет мужчины с седой бородой и усами" loading="lazy" decoding="async">
+    <figure class="пара"><div class="пара__кадры"><img width="660" height="868" src="img/muzh-foto.webp" alt="Референс: мужчина с седой бородой" loading="lazy" decoding="async"></div>
+      <img width="1000" height="1315" src="img/muzh-portret.webp" alt="Портрет мужчины с седой бородой и усами" loading="lazy" decoding="async">
       <span class="пара__было">референс → портрет</span>
       <figcaption><b>Мужчина с бородой</b>Портрет по референсу</figcaption></figure>
   </div>
@@ -339,27 +362,27 @@
   <div class="лента-рамка">
   <button class="лента__стрелка лента__стрелка--назад" type="button" aria-label="Листать назад">‹</button>
   <div class="лента">
-    <figure class="плитка"><img src="img/galereya-luchnica.webp" alt="Рыжая лучница в зелёном костюме в лесу" loading="lazy" decoding="async"><span class="плитка__вид">иллюстрация</span></figure>
-    <figure class="плитка"><img src="img/arhiv-4.webp" alt="Девушка с букетом красных роз" loading="lazy" decoding="async"><span class="плитка__вид">портрет</span></figure>
-    <figure class="плитка"><img src="img/arhiv-5.webp" alt="Портрет девушки в чёрной рубашке" loading="lazy" decoding="async"><span class="плитка__вид">портрет</span></figure>
-    <figure class="плитка"><img src="img/galereya-novyj-god.webp" alt="Открытка «С Новым годом!»: Дед Мороз, Снегурочка и огненный конь" loading="lazy" decoding="async"><span class="плитка__вид">открытка</span></figure>
-    <figure class="плитка"><img src="img/galereya-vredina.webp" alt="Рыжая девочка в короне с хмурым взглядом" loading="lazy" decoding="async"><span class="плитка__вид">иллюстрация</span></figure>
-    <figure class="плитка"><img src="img/arhiv-starec.webp" alt="Портрет старца с длинной седой бородой и крестом" loading="lazy" decoding="async"><span class="плитка__вид">портрет</span></figure>
-    <figure class="плитка"><img src="img/galereya-osen-most.webp" alt="Осенний парк: каменный мостик над ручьём" loading="lazy" decoding="async"><span class="плитка__вид">пейзаж</span></figure>
-    <figure class="плитка"><img src="img/vid-sharzh.webp" alt="Добрый шарж: жених и невеста под аркой из белых роз" loading="lazy" decoding="async"><span class="плитка__вид">шарж</span></figure>
-    <figure class="плитка"><img src="img/malysh-portret.webp" alt="Детский портрет смеющегося малыша с голубыми глазами" loading="lazy" decoding="async"><span class="плитка__вид">портрет</span></figure>
-    <figure class="плитка"><img src="img/galereya-koroleva-elfov.webp" alt="Эльфийка с серебряными косами в золотой короне" loading="lazy" decoding="async"><span class="плитка__вид">иллюстрация</span></figure>
-    <figure class="плитка"><img src="img/arhiv-2.webp" alt="Пара в зимних шапках на синем фоне" loading="lazy" decoding="async"><span class="плитка__вид">портрет</span></figure>
-    <figure class="плитка"><img src="img/galereya-buket.webp" alt="Букет васильков и ромашек в гранёном стакане" loading="lazy" decoding="async"><span class="плитка__вид">натюрморт</span></figure>
-    <figure class="плитка"><img src="img/arhiv-3.webp" alt="Девушка с венком из роз и бусами" loading="lazy" decoding="async"><span class="плитка__вид">портрет</span></figure>
-    <figure class="плитка"><img src="img/vid-otkrytka.webp" alt="Открытка к Дню Победы: портрет солдата в пилотке с тюльпанами" loading="lazy" decoding="async"><span class="плитка__вид">открытка</span></figure>
-    <figure class="плитка"><img src="img/galereya-zhenshchina.webp" alt="Портрет седовласой женщины с жемчужными серьгами на синем фоне" loading="lazy" decoding="async"><span class="плитка__вид">портрет</span></figure>
-    <figure class="плитка"><img src="img/galereya-konki.webp" alt="Коньки на льду под снегопадом" loading="lazy" decoding="async"><span class="плитка__вид">иллюстрация</span></figure>
-    <figure class="плитка"><img src="img/arhiv-6.webp" alt="Девушка в розовом платье с оборками" loading="lazy" decoding="async"><span class="плитка__вид">портрет</span></figure>
-    <figure class="плитка"><img src="img/galereya-gejsha.webp" alt="Гейша в красном кимоно под цветущей сакурой" loading="lazy" decoding="async"><span class="плитка__вид">иллюстрация</span></figure>
-    <figure class="плитка плитка--стикер"><img src="img/vid-stikery-nabor.webp" alt="Набор стикеров по фото: шесть эмоций с подписями — «Привет! Как дела?», «Ого, ничего себе…», «Жду…», «Улыбнись…», «Да, Босс…»" loading="lazy" decoding="async"><span class="плитка__вид">стикеры</span></figure>
-    <figure class="плитка"><img src="img/galereya-more.webp" alt="Морской берег с домиками на скалах на закате" loading="lazy" decoding="async"><span class="плитка__вид">пейзаж</span></figure>
-    <figure class="плитка"><img src="img/arhiv-7.webp" alt="Портрет светловолосого юноши" loading="lazy" decoding="async"><span class="плитка__вид">портрет</span></figure>
+    <figure class="плитка"><img width="520" height="775" src="img/galereya-luchnica.webp" alt="Рыжая лучница в зелёном костюме в лесу" loading="lazy" decoding="async"><span class="плитка__вид">иллюстрация</span></figure>
+    <figure class="плитка"><img width="520" height="719" src="img/arhiv-4.webp" alt="Девушка с букетом красных роз" loading="lazy" decoding="async"><span class="плитка__вид">портрет</span></figure>
+    <figure class="плитка"><img width="520" height="693" src="img/arhiv-5.webp" alt="Портрет девушки в чёрной рубашке" loading="lazy" decoding="async"><span class="плитка__вид">портрет</span></figure>
+    <figure class="плитка"><img width="520" height="586" src="img/galereya-novyj-god.webp" alt="Открытка «С Новым годом!»: Дед Мороз, Снегурочка и огненный конь" loading="lazy" decoding="async"><span class="плитка__вид">открытка</span></figure>
+    <figure class="плитка"><img width="520" height="694" src="img/galereya-vredina.webp" alt="Рыжая девочка в короне с хмурым взглядом" loading="lazy" decoding="async"><span class="плитка__вид">иллюстрация</span></figure>
+    <figure class="плитка"><img width="520" height="686" src="img/arhiv-starec.webp" alt="Портрет старца с длинной седой бородой и крестом" loading="lazy" decoding="async"><span class="плитка__вид">портрет</span></figure>
+    <figure class="плитка"><img width="520" height="786" src="img/galereya-osen-most.webp" alt="Осенний парк: каменный мостик над ручьём" loading="lazy" decoding="async"><span class="плитка__вид">пейзаж</span></figure>
+    <figure class="плитка"><img width="520" height="541" src="img/vid-sharzh.webp" alt="Добрый шарж: жених и невеста под аркой из белых роз" loading="lazy" decoding="async"><span class="плитка__вид">шарж</span></figure>
+    <figure class="плитка"><img width="520" height="520" src="img/malysh-portret.webp" alt="Детский портрет смеющегося малыша с голубыми глазами" loading="lazy" decoding="async"><span class="плитка__вид">портрет</span></figure>
+    <figure class="плитка"><img width="520" height="693" src="img/galereya-koroleva-elfov.webp" alt="Эльфийка с серебряными косами в золотой короне" loading="lazy" decoding="async"><span class="плитка__вид">иллюстрация</span></figure>
+    <figure class="плитка"><img width="520" height="719" src="img/arhiv-2.webp" alt="Пара в зимних шапках на синем фоне" loading="lazy" decoding="async"><span class="плитка__вид">портрет</span></figure>
+    <figure class="плитка"><img width="520" height="674" src="img/galereya-buket.webp" alt="Букет васильков и ромашек в гранёном стакане" loading="lazy" decoding="async"><span class="плитка__вид">натюрморт</span></figure>
+    <figure class="плитка"><img width="520" height="855" src="img/arhiv-3.webp" alt="Девушка с венком из роз и бусами" loading="lazy" decoding="async"><span class="плитка__вид">портрет</span></figure>
+    <figure class="плитка"><img width="520" height="693" src="img/vid-otkrytka.webp" alt="Открытка к Дню Победы: портрет солдата в пилотке с тюльпанами" loading="lazy" decoding="async"><span class="плитка__вид">открытка</span></figure>
+    <figure class="плитка"><img width="520" height="772" src="img/galereya-zhenshchina.webp" alt="Портрет седовласой женщины с жемчужными серьгами на синем фоне" loading="lazy" decoding="async"><span class="плитка__вид">портрет</span></figure>
+    <figure class="плитка"><img width="520" height="520" src="img/galereya-konki.webp" alt="Коньки на льду под снегопадом" loading="lazy" decoding="async"><span class="плитка__вид">иллюстрация</span></figure>
+    <figure class="плитка"><img width="520" height="656" src="img/arhiv-6.webp" alt="Девушка в розовом платье с оборками" loading="lazy" decoding="async"><span class="плитка__вид">портрет</span></figure>
+    <figure class="плитка"><img width="520" height="518" src="img/galereya-gejsha.webp" alt="Гейша в красном кимоно под цветущей сакурой" loading="lazy" decoding="async"><span class="плитка__вид">иллюстрация</span></figure>
+    <figure class="плитка плитка--стикер"><img width="520" height="493" src="img/vid-stikery-nabor.webp" alt="Набор стикеров по фото: шесть эмоций с подписями — «Привет! Как дела?», «Ого, ничего себе…», «Жду…», «Улыбнись…», «Да, Босс…»" loading="lazy" decoding="async"><span class="плитка__вид">стикеры</span></figure>
+    <figure class="плитка"><img width="520" height="649" src="img/galereya-more.webp" alt="Морской берег с домиками на скалах на закате" loading="lazy" decoding="async"><span class="плитка__вид">пейзаж</span></figure>
+    <figure class="плитка"><img width="520" height="693" src="img/arhiv-7.webp" alt="Портрет светловолосого юноши" loading="lazy" decoding="async"><span class="плитка__вид">портрет</span></figure>
   </div>
   <button class="лента__стрелка лента__стрелка--вперёд" type="button" aria-label="Листать вперёд">›</button>
   </div>
@@ -403,7 +426,7 @@
       </ol>
     </div>
     <figure class="кадр">
-      <img src="img/muzh-mops.webp" alt="Портрет мужчины с мопсом на руках, в углу — исходное фото" loading="lazy" decoding="async">
+      <img width="1000" height="1333" src="img/muzh-mops.webp" alt="Портрет мужчины с мопсом на руках, в углу — исходное фото" loading="lazy" decoding="async">
       <figcaption>Портрет с любимцем — по одному фото</figcaption>
     </figure>
   </div>
@@ -425,7 +448,7 @@
     <li><b>Готовый портрет</b><span>файл PNG на вашу почту</span></li>
   </ol>
   <figure class="кадр">
-    <img src="img/pantera-interer.webp" alt="Картина с чёрной пантерой в золотой раме на стене гостиной" loading="lazy" decoding="async">
+    <img width="1100" height="1155" src="img/pantera-interer.webp" alt="Картина с чёрной пантерой в золотой раме на стене гостиной" loading="lazy" decoding="async">
     <figcaption>Моя работа в интерьере: так картина может выглядеть у вас дома</figcaption>
   </figure>
 </div>
@@ -456,7 +479,7 @@
   <p class="кикер кикер--вверху">Об авторе</p>
   <div class="знакомство">
     <figure class="портрет">
-      <img src="img/foto-avtora-ekran7-lico4.webp" alt="Гюзелия Аистова за работой с планшетом" loading="lazy" decoding="async">
+      <img width="1161" height="1190" src="img/foto-avtora-ekran7-lico4.webp" alt="Гюзелия Аистова за работой с планшетом" loading="lazy" decoding="async">
     </figure>
     <div class="рассказ">
       <p class="кикер кикер--над-текстом" aria-hidden="true">Об авторе</p>
@@ -522,7 +545,7 @@
       <h2>Ваш портрет начинается с&nbsp;одного сообщения</h2>
     </div>
     <p class="текст">Если хотите сохранить свою историю в&nbsp;портрете&nbsp;— напишите мне, обсудим идею и&nbsp;фотографии.</p>
-    <a class="кнопка кнопка--главная" href="https://max.ru/u/f9LHodD0cOK2V7GORyJiWTEJaWReYrQ74yPLNE6TqSnU1nsbiuqmdJSMkWU" target="_blank" rel="noopener">Написать мне…</a>
+    <a class="кнопка кнопка--главная" href="https://max.ru/u/f9LHodD0cOK2V7GORyJiWTEJaWReYrQ74yPLNE6TqSnU1nsbiuqmdJSMkWU" target="_blank" rel="noopener">Написать в MAX</a>
   </div>
 </div>
 </section>
