@@ -291,6 +291,8 @@
   @media (max-width: 599px) { #экран-1 .шапка__лого { white-space: nowrap; letter-spacing: .06em; gap: .5em; } #экран-1 .шапка__лого::before, #экран-1 .шапка__лого::after { width: 1.25em; } } /* на телефоне знак в одну строку */
   #экран-1 .знак-над-текстом { display: none; }
   @media (min-width: 900px) { #экран-1 .шапка { display: none; } #экран-1 .знак-над-текстом { display: flex; width: fit-content; align-self: center; margin: -40px auto 64px; } /* нижний отступ гасит подъём заголовка на 64px */ } /* на компьютере знак — по центру над текстом, по просьбе владелицы */
+  #экран-1 .запасная-связь { margin: 0; text-align: center; font-size: var(--кегль-мелкий); color: var(--цвет-текст-мягкий); } /* запасной путь для тех, у кого нет MAX */
+  #экран-1 .запасная-связь a { color: inherit; text-decoration: underline; text-underline-offset: .2em; }
 </style>
   <header class="шапка">
     <a class="шапка__лого" href="#">Портреты Гюзелии Аистовой</a>
@@ -312,6 +314,7 @@
       </ul>
       <p class="первый-экран__доверие">🏆 <span>7 призовых мест · 1&nbsp;место на «Таланте России», 2026 · 3&nbsp;международные выставки</span></p>
       <div class="первый-экран__действие"><a class="кнопка кнопка--главная" href="https://max.ru/u/f9LHodD0cOK2V7GORyJiWTEJaWReYrQ74yPLNE6TqSnU1nsbiuqmdJSMkWU">Написать в MAX</a></div>
+      <p class="запасная-связь">Нет MAX? <a href="https://t.me/amguzelia" target="_blank" rel="noopener">Напишите в Telegram</a></p>
     </div>
     <figure class="картинка картинка--фото картинка--край первый-экран__картинка" style="--лицо-в-кадре: .28">
       <picture><source media="(max-width: 899px)" srcset="img/foto-avtora-ekran1-lico4-telefon.webp" width="900" height="1127"><img width="1005" height="1396" src="img/foto-avtora-ekran1-lico4.webp" alt="Нарисую портрет по вашим фото в подарок или для дома" data-лицо="54,33" fetchpriority="high"></picture>
@@ -407,6 +410,7 @@
   </script>
   <div class="подвал">
     <a class="кнопка кнопка--главная" href="https://max.ru/u/f9LHodD0cOK2V7GORyJiWTEJaWReYrQ74yPLNE6TqSnU1nsbiuqmdJSMkWU">Обсудить портрет</a>
+    <p class="запасная-связь">Нет MAX? <a href="https://t.me/amguzelia" target="_blank" rel="noopener">Напишите в Telegram</a></p>
     <p>Работы с заказов показаны с разрешения заказчиков</p>
   </div>
 </div>
@@ -471,6 +475,7 @@
   <div class="подвал действие-секции">
     <p>Цена — за работу: вы получаете готовый файл портрета. Печать, лак и оформление — отдельно, подберём под вашу задачу, и стоимость я назову до начала работы</p>
     <a class="кнопка кнопка--главная" href="https://max.ru/u/f9LHodD0cOK2V7GORyJiWTEJaWReYrQ74yPLNE6TqSnU1nsbiuqmdJSMkWU">Обсудить портрет</a>
+    <p class="запасная-связь">Нет MAX? <a href="https://t.me/amguzelia" target="_blank" rel="noopener">Напишите в Telegram</a></p>
   </div>
 </div>
 </section>

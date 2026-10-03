@@ -1743,6 +1743,8 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-03 .лента__стрелка { display: none; }
   }
   #экран-03 .кнопка { font-size: var(--кегль-мелкий); min-height: 0; padding: .7em 1.1em; }
+  #экран-03 .подвал .запасная-связь { margin-top: -.5rem; }
+  #экран-03 .запасная-связь a { color: inherit; text-decoration: underline; text-underline-offset: .2em; }
 
 /* экран 04 */
 #экран-04 .кикер { background: transparent; border: 0; box-shadow: none; padding: 0; border-radius: 0; gap: .75em; text-transform: uppercase; letter-spacing: .14em; font-size: var(--кегль-мелкий); font-weight: 800; color: color-mix(in srgb, var(--цвет-тёплый) 65%, var(--цвет-акцент)); }
@@ -1841,6 +1843,8 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-06 .строка--главная { grid-column: auto; }
   }
   #экран-06 .кнопка { font-size: var(--кегль-мелкий); min-height: 0; padding: .7em 1.1em; }
+  #экран-06 .подвал .запасная-связь { margin-top: -.75rem; }
+  #экран-06 .запасная-связь a { color: inherit; text-decoration: underline; text-underline-offset: .2em; }
 
 /* экран 07 */
 #экран-07 .кикер { background: transparent; border: 0; box-shadow: none; padding: 0; border-radius: 0; gap: .75em; text-transform: uppercase; letter-spacing: .14em; font-size: var(--кегль-мелкий); font-weight: 800; color: var(--цвет-тёплый); }
