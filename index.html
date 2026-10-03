@@ -322,7 +322,14 @@
       <figcaption><b>Мужчина с бородой</b>Портрет по референсу</figcaption></figure>
   </div>
   <div class="ещё"><h3>Ещё работы</h3></div>
+  <div class="лента-рамка">
+  <button class="лента__стрелка лента__стрелка--назад" type="button" aria-label="Листать назад">‹</button>
   <div class="лента">
+    <figure class="плитка"><img src="img/galereya-luchnica.webp" alt="Рыжая лучница в зелёном костюме в лесу" loading="lazy" decoding="async"><span class="плитка__вид">иллюстрация</span></figure>
+    <figure class="плитка"><img src="img/arhiv-4.webp" alt="Девушка с букетом красных роз" loading="lazy" decoding="async"><span class="плитка__вид">портрет</span></figure>
+    <figure class="плитка"><img src="img/arhiv-5.webp" alt="Портрет девушки в чёрной рубашке" loading="lazy" decoding="async"><span class="плитка__вид">портрет</span></figure>
+    <figure class="плитка"><img src="img/galereya-novyj-god.webp" alt="Открытка «С Новым годом!»: Дед Мороз, Снегурочка и огненный конь" loading="lazy" decoding="async"><span class="плитка__вид">открытка</span></figure>
+    <figure class="плитка"><img src="img/galereya-vredina.webp" alt="Рыжая девочка в короне с хмурым взглядом" loading="lazy" decoding="async"><span class="плитка__вид">иллюстрация</span></figure>
     <figure class="плитка"><img src="img/arhiv-starec.webp" alt="Портрет старца с длинной седой бородой и крестом" loading="lazy" decoding="async"><span class="плитка__вид">портрет</span></figure>
     <figure class="плитка"><img src="img/galereya-osen-most.webp" alt="Осенний парк: каменный мостик над ручьём" loading="lazy" decoding="async"><span class="плитка__вид">пейзаж</span></figure>
     <figure class="плитка"><img src="img/vid-sharzh.webp" alt="Добрый шарж: жених и невеста под аркой из белых роз" loading="lazy" decoding="async"><span class="плитка__вид">шарж</span></figure>
@@ -339,12 +346,28 @@
     <figure class="плитка плитка--стикер"><img src="img/vid-stiker.webp" alt="Стикер по фото: девушка складывает сердце руками, подпись «Это любовь…»" loading="lazy" decoding="async"><span class="плитка__вид">стикер</span></figure>
     <figure class="плитка"><img src="img/galereya-more.webp" alt="Морской берег с домиками на скалах на закате" loading="lazy" decoding="async"><span class="плитка__вид">пейзаж</span></figure>
     <figure class="плитка"><img src="img/arhiv-7.webp" alt="Портрет светловолосого юноши" loading="lazy" decoding="async"><span class="плитка__вид">портрет</span></figure>
-    <figure class="плитка"><img src="img/galereya-luchnica.webp" alt="Рыжая лучница в зелёном костюме в лесу" loading="lazy" decoding="async"><span class="плитка__вид">иллюстрация</span></figure>
-    <figure class="плитка"><img src="img/arhiv-4.webp" alt="Девушка с букетом красных роз" loading="lazy" decoding="async"><span class="плитка__вид">портрет</span></figure>
-    <figure class="плитка"><img src="img/arhiv-5.webp" alt="Портрет девушки в чёрной рубашке" loading="lazy" decoding="async"><span class="плитка__вид">портрет</span></figure>
-    <figure class="плитка"><img src="img/galereya-novyj-god.webp" alt="Открытка «С Новым годом!»: Дед Мороз, Снегурочка и огненный конь" loading="lazy" decoding="async"><span class="плитка__вид">открытка</span></figure>
-    <figure class="плитка"><img src="img/galereya-vredina.webp" alt="Рыжая девочка в короне с хмурым взглядом" loading="lazy" decoding="async"><span class="плитка__вид">иллюстрация</span></figure>
   </div>
+  <button class="лента__стрелка лента__стрелка--вперёд" type="button" aria-label="Листать вперёд">›</button>
+  </div>
+  <script>
+  (function () {
+    var рамка = document.querySelector('#экран-03 .лента-рамка');
+    if (!рамка) return;
+    var лента = рамка.querySelector('.лента');
+    var назад = рамка.querySelector('.лента__стрелка--назад');
+    var вперёд = рамка.querySelector('.лента__стрелка--вперёд');
+    function шаг() { return лента.clientWidth * 0.8; }
+    function обновить() {
+      назад.disabled = лента.scrollLeft < 5;
+      вперёд.disabled = лента.scrollLeft + лента.clientWidth > лента.scrollWidth - 5;
+    }
+    назад.addEventListener('click', function () { лента.scrollBy({ left: -шаг(), behavior: 'smooth' }); });
+    вперёд.addEventListener('click', function () { лента.scrollBy({ left: шаг(), behavior: 'smooth' }); });
+    лента.addEventListener('scroll', обновить, { passive: true });
+    window.addEventListener('resize', обновить);
+    обновить();
+  })();
+  </script>
   <div class="подвал">
     <a class="кнопка кнопка--главная" href="https://max.ru/u/f9LHodD0cOK2V7GORyJiWTEJaWReYrQ74yPLNE6TqSnU1nsbiuqmdJSMkWU">Обсудить портрет</a>
     <p>Работы с заказов показаны с разрешения заказчиков</p>

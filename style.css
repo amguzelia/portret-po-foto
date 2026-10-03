@@ -1709,7 +1709,14 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-03 .пара__было { position: absolute; top: .875rem; left: .875rem; padding: .25em .75em; border-radius: 9em; font-size: var(--кегль-мелкий); }
   #экран-03 .ещё { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-top: clamp(48px, 6vw, 80px); }
   #экран-03 .ещё h3 { margin: 0; font-size: var(--кегль-лид); }
-  #экран-03 .лента { display: flex; gap: 4px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: .6rem; margin: 1rem auto 0; max-width: 960px; scrollbar-width: thin; }
+  #экран-03 .лента { display: flex; gap: 4px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; }
+  #экран-03 .лента::-webkit-scrollbar { display: none; }
+  #экран-03 .лента-рамка { position: relative; margin: 1rem auto 0; max-width: 960px; }
+  #экран-03 .лента-рамка > .лента { position: relative; z-index: 1; }
+  #экран-03 .лента__стрелка { position: absolute; top: 50%; transform: translateY(-50%); z-index: 3; width: 44px; height: 44px; border: 0; border-radius: 50%; cursor: pointer; font-size: 28px; line-height: 1; padding: 0 0 4px; background: var(--цвет-тёплый); color: var(--цвет-тёмный-фон); box-shadow: 0 2px 10px color-mix(in srgb, var(--цвет-тёмный-фон) 60%, transparent); transition: opacity .2s; }
+  #экран-03 .лента__стрелка--назад { left: -22px; }
+  #экран-03 .лента__стрелка--вперёд { right: -22px; }
+  #экран-03 .лента__стрелка:disabled { opacity: 0; pointer-events: none; }
   #экран-03 .лента > .плитка { flex: 0 0 17.5%; scroll-snap-align: start; }
   #экран-03 .плитка { position: relative; margin: 0; }
   #экран-03 .плитка--стикер img { object-fit: contain; background: color-mix(in srgb, var(--цвет-тёплый) 18%, transparent); }
@@ -1731,6 +1738,9 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-03 .пара:last-child:nth-child(odd) { width: auto; justify-self: stretch; }
     #экран-03 .лента { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: .5rem; }
     #экран-03 .лента > .плитка { flex: 0 0 31%; }
+    #экран-03 .лента { padding-bottom: .5rem; scrollbar-width: thin; }
+    #экран-03 .лента::-webkit-scrollbar { display: block; height: 4px; }
+    #экран-03 .лента__стрелка { display: none; }
   }
   #экран-03 .кнопка { font-size: var(--кегль-мелкий); min-height: 0; padding: .7em 1.1em; }
 
