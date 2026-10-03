@@ -1709,7 +1709,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-03 .пара__было { position: absolute; top: .875rem; left: .875rem; padding: .25em .75em; border-radius: 9em; font-size: var(--кегль-мелкий); }
   #экран-03 .ещё { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-top: clamp(48px, 6vw, 80px); }
   #экран-03 .ещё h3 { margin: 0; font-size: var(--кегль-лид); }
-  #экран-03 .лента { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; margin-top: 1rem; }
+  #экран-03 .лента { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; margin: 1rem auto 0; max-width: 960px; }
   #экран-03 .плитка { position: relative; margin: 0; }
   #экран-03 .плитка--стикер img { object-fit: contain; background: color-mix(in srgb, var(--цвет-тёплый) 18%, transparent); }
   #экран-03 .плитка__вид { position: absolute; left: 6px; bottom: 6px; padding: .2em .6em; border-radius: 999px; font-size: var(--кегль-мелкий); background: color-mix(in srgb, var(--цвет-тёмный-фон) 70%, transparent); color: var(--цвет-тёмный-текст); }
@@ -1729,7 +1729,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
       #экран-03 .стена { grid-template-columns: 1fr; }
     #экран-03 .пара:last-child:nth-child(odd) { width: auto; justify-self: stretch; }
     #экран-03 .лента { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: .5rem; }
-    #экран-03 .плитка { flex: 0 0 42%; scroll-snap-align: start; }
+    #экран-03 .плитка { flex: 0 0 31%; scroll-snap-align: start; }
   }
   #экран-03 .кнопка { font-size: var(--кегль-мелкий); min-height: 0; padding: .7em 1.1em; }
 
