@@ -239,6 +239,30 @@
 :root, .светлый { --цвет-кнопки: #111111; --цвет-на-кнопке: #FAF8F4; --цвет-кнопки-навёл: var(--цвет-акцент-тёмный); }
 .тёмный { --цвет-кнопки: #C89A3C; --цвет-на-кнопке: #111111; --цвет-кнопки-навёл: #D1AA5C; }
 
+/* Одобренный пробегающий блик на всех кнопках (04.11.2026). */
+.кнопка.кнопка, #экран-07 .канал {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.кнопка.кнопка::before, #экран-07 .канал::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  top: -40%;
+  bottom: -40%;
+  left: 0;
+  width: 45%;
+  background: linear-gradient(105deg, transparent 5%, rgba(255,249,221,.12) 28%, rgba(255,249,221,.72) 50%, rgba(255,249,221,.12) 72%, transparent 95%);
+  transform: translateX(-160%) skewX(-18deg);
+  animation: портрет-блик 4.2s ease-in-out infinite;
+}
+#экран-07 .канал { overflow: clip; }
+@keyframes портрет-блик {
+  0%, 8% { transform: translateX(-160%) skewX(-18deg); }
+  36%, 100% { transform: translateX(340%) skewX(-18deg); }
+}
 </style>
 <script>
 (function () {
